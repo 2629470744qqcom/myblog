@@ -1,0 +1,153 @@
+{__NOLAYOUT__}
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+		<link rel="stylesheet" href="__PUBLIC__/Admin/css/admin.min.css">
+		<link rel="stylesheet" href="{:COM}css/common.min.css" />
+		<title>登录</title>
+
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			
+			body {
+				background: url('__PUBLIC__/Share/images/login_bg.jpg') no-repeat center center;
+				background-size: cover;
+			}
+			
+			.login-panel {
+				width: 400px;
+				position: absolute;
+				top: 25%;
+				right: 15%;
+			}
+			
+			.panel-heading {
+				background: url('__PUBLIC__/Share/images/login_head.png') no-repeat center center;
+				height: 70px;
+			}
+			
+			.spilt-line {
+				height: 1px;
+				border-bottom: 2px dotted #0eacdb;
+				margin-bottom: 10px;
+			}
+			
+			.login_btn {
+				background-color: #0eacda;
+				color: white;
+				font-size: 25px;
+				line-height: 30px;
+				font-weight: bold;
+				margin-top: 30px;
+			}
+			
+			.login_user {
+				text-indent: 35px;
+				background: url("__PUBLIC__/Share/images/user.png") no-repeat;
+				background-position: 10px center;
+			}
+			
+			.login_pwd {
+				text-indent: 35px;
+				background: url("__PUBLIC__/Share/images/pwd.png") no-repeat;
+				background-position: 11px center;
+			}
+			
+			.input_Width {
+				width: 100%;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				display: flex;
+				position: relative;
+				-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+				-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+				transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+			}
+			
+			.error {
+				position: absolute;
+				height: 36px;
+				line-height: 36px;
+				right: 10px;
+			}
+			
+			.login_Width {
+				display: inline-block;
+				width: 10%;
+				height: 34px;
+				float: left;
+			}
+			
+			input:-webkit-autofill {
+				-webkit-box-shadow: 0 0 0 1000px white inset !important;
+			}
+					
+			.input_Uesr_Width {
+				width: 90%;
+				float: left;
+			}
+			
+			.input_Uesr_Style {
+				border-radius: 0px;
+				border: none;
+				box-shadow: none;
+			}
+			
+			.form-control:focus {
+				border-color: #66afe9;
+				outline: 0;
+				-webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, .075), 0 0 8px rgba(255, 255, 255, .6);
+				box-shadow: inset 0 1px 1px rgba(255, 255, 255, .075), 0 0 8px rgba(255, 255, 255, .6);
+			}
+			
+			.form-control {
+				padding: 6px 0px;
+				margin-right: 1px;
+			}
+			
+			.input_Width:hover {
+				border-color: #66afe9;
+				outline: 0;
+				-webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, .075), 0 0 8px rgba(255, 255, 255, .6);
+				box-shadow: inset 0 1px 1px rgba(255, 255, 255, .075), 0 0 8px rgba(255, 255, 255, .6);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="login-panel panel">
+			<div class="panel-heading"></div>
+			<div class="spilt-line">&nbsp;</div>
+			<div class="panel-body">
+				<form id="myform" method='post'>
+					<div class="input_Width form-group">
+						<span class="login_Width login_user"></span>
+						<input class="form-control required input_Uesr_Width input_Uesr_Style" placeholder="用户名" name="username" type="text" autofocus>
+					</div>
+					<input type="hidden" value="sdfads">
+					<div class="input_Width form-group">
+						<span class="login_Width login_pwd"></span>
+						<input class="form-control required input_Uesr_Width input_Uesr_Style" placeholder="密码" name="password" type="password">
+					</div>
+					<button class="btn btn-block login_btn">登  录</button>
+				</form>
+			</div>
+		</div>
+		<script src="{:JQ}"></script>
+		<script src="{:COM}js/common.min.js"></script>
+	</body>
+
+</html>
