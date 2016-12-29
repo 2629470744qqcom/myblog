@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="renderer" content="webkit">
     <link rel="stylesheet" href="{:LUI}css/layui.css" />
     <link rel="stylesheet" href="{:CSS}index.css" />
     <title></title>
@@ -71,46 +71,48 @@
     <div class="layui-side">
         <ul class="layui-nav layui-nav-tree">
             <li class="layui-nav-item layui-nav-title item-show" nav-item-num="2">
-                <a>用户管理<i class="layui-icon layui-right">&#xe619;</i></a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="javascript:;" data-url="user/user-list.html"><label>用户列表</label></a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="javascript:;" data-url="user/user-collect.html"><label>用户统计</label></a>
-            </li>
-            <li class="layui-nav-item layui-nav-title item-show" nav-item-num="1">
-                <a>产品管理<i class="layui-icon layui-right">&#xe619;</i></a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="javascript:;" data-url="product/product-list.html"><label>产品列表</label></a>
-            </li>
-            <li class="layui-nav-item layui-nav-title item-show" nav-item-num="2">
-                <a>订单管理<i class="layui-icon layui-right">&#xe619;</i></a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="javascript:;" data-url="order/order-list.html"><label>订单列表</label></a>
-            </li>
-            </li>
-            <li class="layui-nav-item layui-nav-title item-show" nav-item-num="2">
                 <a>文章管理<i class="layui-icon layui-right">&#xe619;</i></a>
             </li>
             <li class="layui-nav-item">
-                <a href="javascript:;" data-url="article/article-list.html"><label>文章列表</label></a>
+                <a href="javascript:;" data-url="{:U('Article/index')}"><label>文章列表</label></a>
             </li>
             <li class="layui-nav-item">
-                <a href="javascript:;" data-url="article/article-sorts.html"><label>文章栏目</label></a>
+                <a href="javascript:;" data-url="user/user-collect.html"><label>文章分类</label></a>
             </li>
+            <!--<li class="layui-nav-item layui-nav-title item-show" nav-item-num="1">-->
+                <!--<a>产品管理<i class="layui-icon layui-right">&#xe619;</i></a>-->
+            <!--</li>-->
+            <!--<li class="layui-nav-item">-->
+                <!--<a href="javascript:;" data-url="product/product-list.html"><label>产品列表</label></a>-->
+            <!--</li>-->
+            <!--<li class="layui-nav-item layui-nav-title item-show" nav-item-num="2">-->
+                <!--<a>订单管理<i class="layui-icon layui-right">&#xe619;</i></a>-->
+            <!--</li>-->
+            <!--<li class="layui-nav-item">-->
+                <!--<a href="javascript:;" data-url="order/order-list.html"><label>订单列表</label></a>-->
+            <!--</li>-->
+            <!--</li>-->
+            <!--<li class="layui-nav-item layui-nav-title item-show" nav-item-num="2">-->
+                <!--<a>文章管理<i class="layui-icon layui-right">&#xe619;</i></a>-->
+            <!--</li>-->
+            <!--<li class="layui-nav-item">-->
+                <!--<a href="javascript:;" data-url="article/article-list.html"><label>文章列表</label></a>-->
+            <!--</li>-->
+            <!--<li class="layui-nav-item">-->
+                <!--<a href="javascript:;" data-url="article/article-sorts.html"><label>文章栏目</label></a>-->
+            <!--</li>-->
         </ul>
     </div>
     <div class="layui-body">
+
         <div class="layui-tab layui-tab-card" lay-filter="page-tab" lay-allowclose="true">
             <!--tab标题-->
             <ul class="layui-tab-title" id="tabTitle">
                 <li class="layui-this"><label>首页</label></li>
             </ul>
             <!--tab内容-->
-            <div class="layui-tab-content" id="tabContainers">
+            <div class="layui-tab-content">
+                {__CONTENT__}
                 <!--<div class="layui-tab-item layui-show">-->
                     <!--<div class="fly-echart echart-map sw-100" id="user-form-map">-->
                         <!--地图-->
@@ -132,5 +134,9 @@
 <script type="text/javascript" src="{:LUI}layui.js"></script>
 <script type="text/javascript" src="{:JS}index.js"></script>
 <script type="text/javascript" src="{:JS}common.js"></script>
+<script type="text/javascript" src="{:JS}user-collect.js"></script>
+<script type="text/javascript" src="{:JS}article.js"></script>
+<script type="text/javascript" src="{:JS}article-add.js"></script>
+<script type="text/javascript" src="{:JS}article-sorts.js"></script>
 </body>
 </html>
