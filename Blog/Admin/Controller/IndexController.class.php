@@ -5,7 +5,6 @@ use Common\Controller\BaseController;
 
 class IndexController extends BaseController {
     public function index(){
-        echo "这是首页";
-       //$this->display();
+       $this->display();
     }
 }

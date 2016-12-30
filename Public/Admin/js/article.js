@@ -5,7 +5,7 @@ layui.use(['layer', 'datatable'], function() {
     /**
      * 渲染数据
      */
-    $('#articleTable').dataTable({
+    $('#articleTable').datatable({
       "language": lang, //提示信息
       "autoWidth": false, //自适应宽度，
       "lengthMenu": [15, 30, 50],
@@ -21,7 +21,7 @@ layui.use(['layer', 'datatable'], function() {
         "aTargets": [0, 4, 7] // 指定列不参与排序
       }],
       "deferRender": true, //延迟渲染
-      "ajax": "../../../json/article.json", //数据的路径
+      //"ajax": "../../../json/article.json", //数据的路径
       "columns": [{ //定义列
         "data": function(obj) {
           return '<input type="checkbox" name="sublist" class="fly-checkbox" data-id=' + obj.id + '>';
@@ -71,7 +71,7 @@ layui.use(['layer', 'datatable'], function() {
   /*文章-添加*/
   $('#btn-adduser').on('click', function() {
     var username = $(this).html();
-    var href = '{:U("Article/add")}';
+    var href = '{:U("Article/addtext")}';
     layer_show(username, href, '', '800', '600');
   });
   /*文章--停用*/
@@ -151,3 +151,48 @@ layui.use(['layer', 'datatable'], function() {
     }
   });
 });
+
+//文本编辑器
+layui.use('layedit', function() {
+  var form = layui.form();
+  var layedit = layui.layedit;
+  var editIndex =layedit.build('article-editor', {
+    tool: [
+      'strong', //加粗
+      'italic', //斜体
+      'underline', //下划线
+      'del', //删除线
+      '|', //分割线
+      'left', //左对齐
+      'center', //居中对齐
+      'right', //右对齐
+      'link', //超链接
+      'unlink', //清除链接
+      'face', //表情
+      'image', //插入图片
+    ]
+  });
+
+  //表单验证
+  form.verify({
+    title: function(value){
+      if(value.length < 5){
+        return '标题至少得5个字符';
+      }
+    },
+    content: function(value){
+      layedit.sync(editIndex);
+    }
+  });
+
+  //图片上传
+  layui.use('upload', function(){
+    layui.upload({
+      url: '' //上传接口
+      ,success: function(res){ //上传成功后的回调
+        console.log(res)
+      }
+    });
+  });
+});
+

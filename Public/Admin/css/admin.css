@@ -3320,7 +3320,7 @@
       border: 1px solid #4E5465;
       border-radius: 0;
       display: none;
-      background: #ffffff; }
+     }
       .layui-header .user .user-nav .user-nav-item a {
         font-size: 12px;
         display: block;
@@ -3668,7 +3668,7 @@ table.dataTable thead .sorting_desc {
 .layui-breadcrumb > a {
   padding-right: 8px;
   line-height: 22px;
-  font-size: 16px;
+  /*font-size: 16px;*/
   color: #333 !important; }
 
 .handle-box .handle-item {
@@ -3909,3 +3909,8 @@ a.badge:focus {
 
 .icon-i-b{display:inline-block;background-image: url('../../imgs/common/sprite.png');background-position: 0px 0px;width:16px;height:16px;}
 .icon-i-w{display:inline-block;background-image: url('../../imgs/common/sprite.png');background-position: -16px 0px;width:16px;height:16px;}
+
+
+/*author 添加的css样式*/
+.blog-search{font-size:15px;margin-left: -15px;}
+.blog-form{margin-top: 20px;margin-left: -50px;}
