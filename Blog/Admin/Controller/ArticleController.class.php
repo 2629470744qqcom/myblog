@@ -7,10 +7,19 @@ class ArticleController extends BaseController {
         $this->display();
     }
 
-/**添加文章*/
+    /**添加文章*/
     public function addtext(){
         $this->display();
     }
 
+    /**编辑文章*/
+    public function edittext(){
+        $this->display();
+    }
 
+    /**删除文章*/
+    public function deltext(){
+        $this->display();
+    }
+    
 }
