@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-12-29 16:16:59
+Date: 2016-12-30 17:12:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,11 +29,15 @@ CREATE TABLE `rain_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of rain_admin
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for rain_article
 -- ----------------------------
 DROP TABLE IF EXISTS `rain_article`;
 CREATE TABLE `rain_article` (
-  `id` int(10) NOT NULL COMMENT '文章标识',
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '文章标识',
   `title` varchar(50) DEFAULT NULL COMMENT '文章标题',
   `author` varchar(20) DEFAULT NULL COMMENT '文章作者',
   `cate_id` int(10) DEFAULT NULL COMMENT '文章类别id',
@@ -49,6 +53,24 @@ CREATE TABLE `rain_article` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of rain_article
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for rain_author
+-- ----------------------------
+DROP TABLE IF EXISTS `rain_author`;
+CREATE TABLE `rain_author` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `author` varchar(50) DEFAULT NULL COMMENT '文章作者',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of rain_author
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for rain_category
 -- ----------------------------
 DROP TABLE IF EXISTS `rain_category`;
@@ -57,3 +79,7 @@ CREATE TABLE `rain_category` (
   `cate_name` varchar(50) DEFAULT NULL COMMENT '类别名称',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of rain_category
+-- ----------------------------
