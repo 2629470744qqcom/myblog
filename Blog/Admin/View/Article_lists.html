@@ -1,0 +1,54 @@
+<div class="tab-body">
+    <span class="layui-breadcrumb"><a href="{:U('Index/index')}">首页</a><a><cite>文章管理</cite></a><a><cite>文章作者</cite></a></span>
+    <div class="handle-box">
+        <ul>
+            <li class="handle-item">
+                <span class="fr">
+                    <a class="layui-btn layui-btn-danger radius btn-delect" id="btn-delect-all">
+                        <i class="linyer icon-delect"></i> 批量删除
+                    </a>
+                    <a class="layui-btn btn-add btn-default" href="{:U('Article/addauthor')}" id="btn-adduser">
+                        <i class="linyer icon-add"></i> 发布文章
+                    </a>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <table class="layui-table  table-sort " id="articleTable">
+        <colgroup>
+            <col width="150">
+            <col width="150">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th><input type="checkbox" class="btn-checkall fly-checkbox"></th>
+            <th>序号</th>
+            <th>标题</th>
+            <th>作者</th>
+            <th>分类</th>
+            <th>点击数</th>
+            <th>添加时间</th>
+            <th>置顶</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="checkbox" name="sublist" class="fly-checkbox" data-id="27"></td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
