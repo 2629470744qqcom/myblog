@@ -25,29 +25,27 @@
         <tr>
             <th><input type="checkbox" class="btn-checkall fly-checkbox"></th>
             <th>序号</th>
-            <th>标题</th>
             <th>作者</th>
-            <th>分类</th>
-            <th>点击数</th>
-            <th>添加时间</th>
-            <th>置顶</th>
             <th>状态</th>
             <th>操作</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td><input type="checkbox" name="sublist" class="fly-checkbox" data-id="27"></td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>
+        <volist name="list" id="list">
+            <tr>
+                <td><input type="checkbox" name="sublist" class="fly-checkbox" data-id="{$list.id}"></td>
+                <td>{$i}</td>
+                <td>{$list.author}</td>
+                <td class="td-status">
+                    <switch name="list.status">
+                        <case value="1"><span class="label radius label-success ">启用</span></case>
+                        <case value="0"><span class="label radius label-default ">禁用</span></case>
+                    </switch>
+
+                <td></td>
+            </tr>
+        </volist>
+
         </tbody>
     </table>
 </div>
