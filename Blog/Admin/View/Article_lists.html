@@ -15,18 +15,12 @@
         </ul>
     </div>
     <table class="layui-table  table-sort " id="articleTable">
-        <colgroup>
-            <col width="150">
-            <col width="150">
-            <col width="200">
-            <col>
-        </colgroup>
         <thead>
         <tr>
-            <th><input type="checkbox" class="btn-checkall fly-checkbox"></th>
-            <th>序号</th>
-            <th>作者</th>
-            <th>状态</th>
+            <th width="70px;"><input type="checkbox" class="btn-checkall fly-checkbox"></th>
+            <th width="70px;">序号</th>
+            <th width="120px;">作者</th>
+            <th width="70px;">状态</th>
             <th>操作</th>
         </tr>
         </thead>
@@ -41,8 +35,26 @@
                         <case value="1"><span class="label radius label-success ">启用</span></case>
                         <case value="0"><span class="label radius label-default ">禁用</span></case>
                     </switch>
-
-                <td></td>
+                </td>
+                <td class="td-handle">
+                    <switch name="list.status">
+                        <case value="1">
+                            <span class="handle-btn handle-btn-stop" title="暂停发布">
+                                <i class="linyer icon-zanting"></i>
+                            </span>
+                        </case>
+                        <case value="0">
+                            <span class="handle-btn handle-btn-run" title="开始发布">
+                                <i class="linyer icon-qiyong"></i></span>
+                        </case>
+                    </switch>
+                    <span title="编辑" class="handle-btn handle-btn-edit">
+                        <i class="linyer icon-edit"></i>
+                    </span>
+                    <span title="删除" class="handle-btn handle-btn-delect">
+                        <i class="linyer icon-delect"></i>
+                    </span>
+                </td>
             </tr>
         </volist>
 

@@ -43,18 +43,27 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td><input type="checkbox" name="sublist" class="fly-checkbox" data-id="27"></td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>
+        <volist name="info" id="info">
+            <tr>
+                <td><input type="checkbox" name="sublist" class="fly-checkbox" data-id="{$info.id}"></td>
+                <td>{$i}</td>
+                <td>{$info.title}</td>
+                <td>{$info.author}</td>
+                <td>{$info.cate_name}</td>
+                <td>{$info.hit}</td>
+                <td>{$info.add_time|date="Y-m-d",###}</td>
+                <td class="td-status"><eq name="info.is_top" value="1"><span class="label radius label-success "> 置顶</span><else /><span class="label radius label-default ">正常</span></eq></td>
+                <td><eq name="info.is_show" value="1"><span class="label radius label-success "> 正常发布</span><else /><span class="label radius label-default ">暂停发布</span></eq></td>
+                <td class="td-handle">
+                    <span title="编辑" class="handle-btn handle-btn-edit">
+                        <i class="linyer icon-edit"></i>
+                    </span>
+                    <span title="删除" class="handle-btn handle-btn-delect">
+                        <i class="linyer icon-delect"></i>
+                    </span>
+                </td>
+            </tr>
+        </volist>
         </tbody>
     </table>
 </div>
