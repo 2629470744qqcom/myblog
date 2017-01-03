@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-12-30 17:12:58
+Date: 2017-01-03 17:22:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,17 +29,13 @@ CREATE TABLE `rain_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of rain_admin
--- ----------------------------
-
--- ----------------------------
 -- Table structure for rain_article
 -- ----------------------------
 DROP TABLE IF EXISTS `rain_article`;
 CREATE TABLE `rain_article` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '文章标识',
   `title` varchar(50) DEFAULT NULL COMMENT '文章标题',
-  `author` varchar(20) DEFAULT NULL COMMENT '文章作者',
+  `author_id` int(10) DEFAULT NULL COMMENT '文章作者id',
   `cate_id` int(10) DEFAULT NULL COMMENT '文章类别id',
   `is_show` tinyint(1) DEFAULT '1' COMMENT '1:启用；0：禁用',
   `hit` int(10) DEFAULT NULL COMMENT '点击数',
@@ -50,11 +46,7 @@ CREATE TABLE `rain_article` (
   `is_delete` tinyint(1) DEFAULT '1' COMMENT '1:未删除 0：删除',
   `keyword` varchar(50) DEFAULT NULL COMMENT '文章关键字',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of rain_article
--- ----------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for rain_author
@@ -62,13 +54,10 @@ CREATE TABLE `rain_article` (
 DROP TABLE IF EXISTS `rain_author`;
 CREATE TABLE `rain_author` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `author` varchar(50) DEFAULT NULL COMMENT '文章作者',
+  `name` varchar(50) DEFAULT NULL COMMENT '文章作者',
+  `status` tinyint(1) DEFAULT '1' COMMENT '状态（1：启用；0：禁用）',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of rain_author
--- ----------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for rain_category
@@ -78,8 +67,4 @@ CREATE TABLE `rain_category` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `cate_name` varchar(50) DEFAULT NULL COMMENT '类别名称',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of rain_category
--- ----------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;

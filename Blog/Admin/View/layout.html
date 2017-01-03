@@ -71,23 +71,10 @@
         {__CONTENT__}
     </div>
 </div>
-<script type="text/javascript" src="{:LUI}admin.js"></script>
+
 <script type="text/javascript" src="{:LUI}layui.js"></script>
 <script type="text/javascript" src="{:JS}common.js"></script>
 <script type="text/javascript" src="{:JS}article.js"></script>
-<script type="text/javascript" src="{:JS}article-add.js"></script>
-<script type="text/javascript" src="{:JS}article-sorts.js"></script>
-<script type="text/javascript" src="{:JS}user-collect.js"></script>
-<script>
-    layui.use('element', function(){
-        var element = layui.element(); //导航的hover效果、二级菜单等功能，需要依赖element模块
 
-        //监听导航点击
-        element.on('nav(demo)', function(elem){
-            //console.log(elem)
-            layer.msg(elem.text());
-        });
-    });
-</script>
 </body>
 </html>
