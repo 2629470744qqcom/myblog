@@ -23,6 +23,7 @@ class ArticleController extends BaseController {
     /**添加文章*/
     public function addtext(){
         if(IS_POST){
+            dump($_POST['pic']);
             $_POST['add_time']=time();
             M('article')->add($_POST);
             $this->redirect('index');

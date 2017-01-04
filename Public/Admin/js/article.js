@@ -41,3 +41,16 @@ layui.use(['form', 'layedit'], function() {
 });
 
 
+//上传图片
+layui.use('upload', function(){
+    layui.upload({
+        url: '', //上传接口
+
+        success: function(res){ //上传成功后的回调
+            console.log(res);
+        }
+    });
+});
+
+
+
