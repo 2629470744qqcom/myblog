@@ -13,6 +13,7 @@
          define('IMG','/Public/'.MODULE_NAME.'/images/');
          define('LUI','/Public/'.MODULE_NAME.'/layui/');
          define('JQ', 'http://apps.bdimg.com/libs/jquery/1.8.2/jquery.min.js');
+
      }
 
  }
