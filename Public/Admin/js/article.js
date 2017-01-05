@@ -44,9 +44,12 @@ layui.use(['form', 'layedit'], function() {
 //上传图片
 layui.use('upload', function(){
     layui.upload({
-        url: '', //上传接口
-
-        success: function(res){ //上传成功后的回调
+        url: "http://localhost/Admin/Article/addtext", //上传接口
+        before: function(input){
+        //返回的参数item，即为当前的input DOM对象
+        console.log('文件上传中');
+    },
+        success: function(res,input){ //上传成功后的回调
             console.log(res);
         }
     });

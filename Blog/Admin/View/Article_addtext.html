@@ -10,7 +10,9 @@
         <div class="layui-form-item">
             <label class="layui-form-label">图片：</label>
             <div class="layui-input-block">
-                <input type="file" name="pic" class="layui-upload-file">
+                <if condition="$infos and $infos.pic"><img src="__PUBLIC__/{$infos.pic}" alt=""></if>
+                <input type="file" name="pic">
+                <!--<input type="file" name="pic" class="layui-upload-file">-->
             </div>
         </div>
         <div class="layui-form-item">
