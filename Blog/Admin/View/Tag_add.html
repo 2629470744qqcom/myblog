@@ -1,0 +1,27 @@
+<div class="pd-20 product-add">
+    <span class="layui-breadcrumb"><a href="{:U('Index/index')}">首页</a><a><cite>标签管理</cite></a><a><gt name="infos.id" value="0"><cite>标签修改</cite><else /><cite>标签添加</cite></gt></a></span>
+    <form class="layui-form blog-form"  method="post" action="{$action_url}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">标签：</label>
+            <div class="layui-input-block">
+                <input type="text" name="tag" lay-verify="required" value="{$infos.tag}" autocomplete="off" placeholder="请输入标签名" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态：</label>
+            <div class="layui-input-block">
+                <input type="radio" name="status" value="1" title="启用" <neq name="infos.status" value="0">checked</neq>>
+                <input type="radio" name="status" value="0" title="禁用" <eq name="infos.status" value="0">checked</eq>>
+            </div>
+        </div>
+
+        <input type="hidden" name="id" value="{$infos.id}">
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="submitall">提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
