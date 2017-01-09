@@ -1,4 +1,4 @@
-<div class="tab-body">
+<div class="pd-20 product-add">
     <span class="layui-breadcrumb"><a href="{:U('Index/index')}">首页</a><a><cite>标签管理</cite></a><a><cite>热门标签</cite></a></span>
     <div class="handle-box">
         <ul>
@@ -52,7 +52,7 @@
                         <a href="{:U('Tag/edit?id='.$tag['id'])}"><i class="linyer icon-edit"></i></a>
                     </span>
                     <span title="删除" class="handle-btn handle-btn-delect">
-                        <a href="{:U('Tag/del?id='.$tag['id'])}"><i class="linyer icon-delect"></i></a>
+                        <a href="{:U('Tag/del?id='.$tag['id'])}" onclick="if(confirm('确定要删除序号为{$i}的标签么')==true){return true;}else{return false;}"><i class="linyer icon-delect"></i></a>
                     </span>
                 </td>
             </tr>

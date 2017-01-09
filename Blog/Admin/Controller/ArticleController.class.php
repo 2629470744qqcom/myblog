@@ -5,7 +5,9 @@ use Common\Controller\BaseController;
 class ArticleController extends BaseController {
     /**文章列表*/
     public function index(){
-        $info =M('article')->field('*')->where('is_delete=1')->order('id desc')->select();
+        $where ='is_delete=1';
+        $where .= I('get.title') != '' ? ' and title like "%'.I('get.title').'%"' : '';
+        $info =M('article')->field('*')->where($where)->order('id desc')->select();
         foreach($info as $k => $v){
             if(!empty($v["cate_id"])){
                 $info[$k]['cname']=M('category')->where('id='.$v['cate_id'])->getField('cate_name');
@@ -67,11 +69,12 @@ class ArticleController extends BaseController {
 
     /*文章作者*/
     public function lists(){
-        $list= M('author')->field('name,status')->where('status=1')->order('id desc,status desc')->select();
+        $list= M('author')->field('id,name,status')->order('id desc,status desc')->select();
         $this->assign('list',$list);
         $this->display();
     }
 
+    /*添加作者*/
     public function addauthor(){
         if(IS_POST){
             $data['name'] =$_POST['name'];
@@ -79,30 +82,65 @@ class ArticleController extends BaseController {
             M('author')->data($data)->add();
             $this->redirect('lists');
         }
+        $this->assign('action_url',U('Article/addauthor'));
         $this->display();
     }
 
+    /*编辑作者*/
+    public function editauthor(){
+        if(IS_POST){
+            M('author')->where('id='.I('post.id',0,'intval'))->save($_POST);
+            $this->redirect('lists');
+        }else{
+            $ats =M('author')->field('id,status,name')->where('id='.I('get.id',0,'intval'))->find();
+            $this->assign('ats',$ats);
+            $this->assign('action_url',U('Article/editauthor'));
+            $this->display('addauthor');
+        }
+    }
+
+    /*删除作者*/
+    public function delauthor(){
+        $id=I('get.id',0,'intval');
+        M('author')->where('id='.$id)->delete($id);
+        $this->redirect('lists');
+    }
+    /*文章分类*/
     public function category(){
         $category= M('category')->field('id,cate_name')->where('')->order('id desc')->select();
         $this->assign('category',$category);
         $this->display();
     }
 
+    /*添加文章分类*/
     public function addcate(){
         if(IS_POST){
             $data['cate_name'] =$_POST['cate_name'];
             M('category')->data($data)->add();
             $this->redirect('category');
         }
+        $this->assign('action_url',U('Article/addcate'));
         $this->display();
     }
 
-    public function upload()
-    {
-//        echo "<pre>";
-//        print_r($_POST);
-//        die;
-        $this->ajaxReturn(json_encode($_POST));
+    /*编辑文章分类*/
+    public function editcate(){
+        if(IS_POST){
+            M('category')->where('id='.I('post.id',0,'intval'))->save($_POST);
+            $this->redirect('category');
+        }else{
+            $cg= M('category')->field('*')->where('id='.I('get.id',0,'intval'))->find();
+            $this->assign('cg',$cg);
+            $this->assign('action_url',U('Article/editcate'));
+            $this->display('addcate');
+        }
+    }
+
+    /*删除分类*/
+    public  function delcate(){
+        $id=I('get.id',0,'intval');
+        M('category')->where('id='.$id)->delete($id);
+        $this->redirect('category');
     }
 
 }

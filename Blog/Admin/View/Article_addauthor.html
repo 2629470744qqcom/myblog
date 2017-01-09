@@ -1,25 +1,22 @@
 <div class="pd-20 product-add">
-    <span class="layui-breadcrumb"><a href="{:U('Index/index')}">首页</a><a><cite>文章管理</cite></a><a><cite>作者添加</cite></a></span>
-    <form class="layui-form blog-form"  method="post" action="{:U('Article/addauthor')}">
+    <span class="layui-breadcrumb"><a href="{:U('Index/index')}">首页</a><a><cite>文章管理</cite></a><a><gt name="ats.id" value="0"><cite>作者修改</cite><else /><cite>作者添加</cite></gt></a></span>
+    <form class="layui-form blog-form"  method="post" action="{$action_url}">
         <div class="layui-form-item">
             <label class="layui-form-label">作者：</label>
             <div class="layui-input-block">
-                <input type="text" name="name" lay-verify="required" autocomplete="off" placeholder="请输入作者姓名" class="layui-input">
+                <input type="text" name="name" lay-verify="required" value="{$ats.name}" autocomplete="off" placeholder="请输入作者姓名" class="layui-input">
             </div>
         </div>
-        <!--<div class="layui-form-item">-->
-            <!--<label class="layui-form-label">状态</label>-->
-            <!--<div class="layui-input-block">-->
-                <!--<input type="checkbox" name="status" lay-skin="switch">-->
-            <!--</div>-->
-        <!--</div>-->
         <div class="layui-form-item">
             <label class="layui-form-label">状态：</label>
             <div class="layui-input-block">
-                <input type="radio" name="status" value="1" title="启用" checked="">
-                <input type="radio" name="status" value="0" title="禁用">
+                <input type="radio" name="status" value="1" title="启用" <neq name="ats.status" value="0">checked</neq>>
+                <input type="radio" name="status" value="0" title="禁用" <eq name="ats.status" value="0">checked</eq>>
             </div>
         </div>
+
+        <input type="hidden" name="id" value="{$ats.id}">
+
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit="" lay-filter="submitall">提交</button>

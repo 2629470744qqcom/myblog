@@ -55,5 +55,3 @@ layui.use('upload', function(){
     });
 });
 
-
-

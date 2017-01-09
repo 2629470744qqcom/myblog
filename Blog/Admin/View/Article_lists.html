@@ -1,4 +1,4 @@
-<div class="tab-body">
+<div class="pd-20 product-add">
     <span class="layui-breadcrumb"><a href="{:U('Index/index')}">首页</a><a><cite>文章管理</cite></a><a><cite>文章作者</cite></a></span>
     <div class="handle-box">
         <ul>
@@ -8,7 +8,7 @@
                         <i class="linyer icon-delect"></i> 批量删除
                     </a>
                     <a class="layui-btn btn-add btn-default" href="{:U('Article/addauthor')}" id="btn-adduser">
-                        <i class="linyer icon-add"></i> 发布文章
+                        <i class="linyer icon-add"></i>添加作者
                     </a>
                 </span>
             </li>
@@ -37,27 +37,15 @@
                     </switch>
                 </td>
                 <td class="td-handle">
-                    <switch name="list.status">
-                        <case value="1">
-                            <span class="handle-btn handle-btn-stop" title="暂停发布">
-                                <i class="linyer icon-zanting"></i>
-                            </span>
-                        </case>
-                        <case value="0">
-                            <span class="handle-btn handle-btn-run" title="开始发布">
-                                <i class="linyer icon-qiyong"></i></span>
-                        </case>
-                    </switch>
-                    <span title="编辑" class="handle-btn handle-btn-edit">
-                        <i class="linyer icon-edit"></i>
+                    <span title="编辑" class="handle-btn handle-btn-edit" >
+                        <a href="{:U('Article/editauthor?id='.$list['id'])}"><i class="linyer icon-edit"></i></a>
                     </span>
                     <span title="删除" class="handle-btn handle-btn-delect">
-                        <i class="linyer icon-delect"></i>
+                          <a href="{:U('Article/delauthor?id='.$list['id'])}" onclick="if(confirm('确定要删除序号为{$i}的作者么')==true){return true;}else{return false;}"><i class="linyer icon-delect"></i></a>
                     </span>
                 </td>
             </tr>
         </volist>
-
         </tbody>
     </table>
 </div>

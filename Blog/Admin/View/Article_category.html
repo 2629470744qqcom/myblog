@@ -1,4 +1,4 @@
-<div class="tab-body">
+<div class="pd-20 product-add">
     <span class="layui-breadcrumb"><a href="{:U('Index/index')}">首页</a><a><cite>文章管理</cite></a><a><cite>文章分类</cite></a></span>
     <div class="handle-box">
         <ul>
@@ -31,10 +31,10 @@
                 <td>{$category.cate_name}</td>
                 <td class="td-handle">
                     <span title="编辑" class="handle-btn handle-btn-edit">
-                        <i class="linyer icon-edit"></i>
+                       <a href="{:U('Article/editcate?id='.$category['id'])}"><i class="linyer icon-edit"></i></a>
                     </span>
                     <span title="删除" class="handle-btn handle-btn-delect">
-                        <i class="linyer icon-delect"></i>
+                       <a href="{:U('Article/delcate?id='.$category['id'])}" onclick="if(confirm('确定要删除序号为{$i}的分类么')==true){return true;}else{return false;}"><i class="linyer icon-delect"></i></a>
                     </span>
                 </td>
             </tr>
